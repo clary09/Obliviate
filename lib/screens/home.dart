@@ -4,6 +4,51 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:obliviate_app/model/user_model.dart';
 import 'package:obliviate_app/screens/login.dart';
+class SideDrawer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: Column(
+        children: <Widget>[
+          DrawerHeader(
+            child: Center(
+
+              child: Text(
+                'Welcome to Oblivate!',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+
+            ),
+            decoration: BoxDecoration(
+              color: Colors.cyan[900],
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.home),
+            title: Text('Home Location'),
+            onTap: () => {},
+          ),
+          ListTile(
+            leading: Icon(Icons.call),
+            title: Text('Emergency call'),
+            onTap: () => {Navigator.of(context).pop()},
+          ),
+          ListTile(
+            leading: Icon(Icons.border_color),
+            title: Text('Know more About Alzeheimer'),
+            onTap: () => {Navigator.of(context).pop()},
+          ),
+          // ListTile(
+          //   leading: Icon(Icons.exit_to_app),
+          //   title: Text('Logout'),
+          //   onTap: () => {Navigator.of(context).pop()},
+          // ),
+        ],
+      ),
+    );
+  }
+}
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -37,10 +82,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: SideDrawer(),
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          title: Text("Obliviate",), centerTitle: true,foregroundColor: Colors.teal,),
+          // backgroundColor: Colors.transparent,
+          // elevation: 0,
+          // leading: IconButton(),
+          title: Text("OBLIVIATE",), centerTitle: true,foregroundColor: Colors.white,),
         body:Center(
           child: Padding(
             padding:EdgeInsets.all(20),
@@ -48,11 +95,11 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                SizedBox(
-                    height: 100,
-                    child: Image.asset("assets/logo1.png",
-                        fit: BoxFit.contain)),
-                Text("Create memories and cherish it!", style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                // SizedBox(
+                //     height: 100,
+                //     child: Image.asset("assets/logo1.png",
+                //         fit: BoxFit.contain)),
+                Text("Create memories and cherish it!", style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
                 SizedBox(height:10),
                 Text(
                     "${loggedInUser.firstName} ${loggedInUser.secondName}",
@@ -67,17 +114,26 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.bold,
                     )),
                 SizedBox(height:10),
-                ActionChip(label: Text("Logout"), onPressed: (){
-                  logout(context);
-                }),
+
+                // ActionChip(label: Text("Logout"), onPressed: (){
+                //   logout(context);
+                // }),
 
               ],
             ),
           ),
 
-        )
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+        floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          logout(context);
+          },
+        backgroundColor: Colors.teal,
+         child: const Icon(Icons.logout),
+         ),
 
-    );
+        );
   }
 
   Future<void> logout(BuildContext context) async{
