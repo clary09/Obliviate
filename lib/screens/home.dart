@@ -1,9 +1,9 @@
- import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
+ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:obliviate_app/model/user_model.dart';
-import 'package:obliviate_app/screens/login.dart';
+import 'package:obliviate_app/screens/health.dart';
+
+import 'package:obliviate_app/screens/profile.dart';
+import 'package:obliviate_app/screens/recreation.dart';
 class SideDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,6 +25,13 @@ class SideDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
+            leading: Icon(Icons.account_circle),
+            title: Text('Profile'),
+            onTap: () => {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen()))
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.home),
             title: Text('Home Location'),
             onTap: () => {},
@@ -39,11 +46,11 @@ class SideDrawer extends StatelessWidget {
             title: Text('Know more About Alzeheimer'),
             onTap: () => {Navigator.of(context).pop()},
           ),
-          // ListTile(
-          //   leading: Icon(Icons.exit_to_app),
-          //   title: Text('Logout'),
-          //   onTap: () => {Navigator.of(context).pop()},
-          // ),
+          ListTile(
+            leading: Icon(Icons.info),
+            title: Text('Info'),
+            onTap: () => {Navigator.of(context).pop()},
+          ),
         ],
       ),
     );
@@ -58,89 +65,201 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-  User? user = FirebaseAuth.instance.currentUser;
-  UserModel loggedInUser = UserModel();
-
-  @override
-  void initState() {
-
-    super.initState();
-    FirebaseFirestore.instance
-        .collection("users")
-        .doc(user!.uid)
-        .get()
-        .then((value){  this.loggedInUser = UserModel.fromMap(value.data());
-         setState(() {
-
-         });
-
-  });
-  }
-
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: SideDrawer(),
         appBar: AppBar(
-          // backgroundColor: Colors.transparent,
-          // elevation: 0,
-          // leading: IconButton(),
-          title: Text("OBLIVIATE",), centerTitle: true,foregroundColor: Colors.white,),
-        body:Center(
-          child: Padding(
-            padding:EdgeInsets.all(20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                // SizedBox(
-                //     height: 100,
-                //     child: Image.asset("assets/logo1.png",
-                //         fit: BoxFit.contain)),
-                Text("Create memories and cherish it!", style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
-                SizedBox(height:10),
-                Text(
-                    "${loggedInUser.firstName} ${loggedInUser.secondName}",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    )),
-                Text(
-                    "${loggedInUser.email}",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    )),
-                SizedBox(height:10),
+          title: Text("OBLIVIATE",), centerTitle: true,foregroundColor: Colors.white,
+        ),
 
-                // ActionChip(label: Text("Logout"), onPressed: (){
-                //   logout(context);
-                // }),
+          body: MainPage(),
 
-              ],
-            ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // logout(context);
+        },
+        backgroundColor: Colors.teal,
+        child: const Icon(Icons.add_location_alt_outlined),
+      ),
+
+      );
+}}
+class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
+
+  @override
+  _MainPageState createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+
+      child: Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+
+        children: [
+          Padding(padding: EdgeInsets.all(45)),
+          Row(
+            children: [
+              SizedBox(
+                height: 50,
+              ),
+              SizedBox(
+                height: 50,
+              ),
+            ],
+          ),
+          Row(
+              children:<Widget> [
+                SizedBox(
+                  width: 50,
+
+                ),
+                Card(
+                  shadowColor: Colors.tealAccent,
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+
+                  child: Image.asset('assets/img1.png',width: 110,height: 110,),
+                ),
+                SizedBox(
+                  width: 40,
+                ),
+                Card(
+                  shadowColor: Colors.tealAccent,
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Image.asset('assets/img2.png',width: 110,height: 110,),
+                ),
+
+              ]
+
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Row(
+            children: [
+              SizedBox(
+                width: 60,
+
+              ),
+              SizedBox(
+                height: 50,
+              child: TextButton(
+              onPressed: ()
+             {
+                Navigator.push(context, MaterialPageRoute(
+               builder: (context) =>HealthScreen()));
+                },
+
+               child: Text("Health",
+                style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+              ),),
+              SizedBox(
+                width: 90,
+              ),
+              SizedBox(
+                height: 50,
+              child: TextButton(
+                onPressed: ()
+             {
+               Navigator.push(context, MaterialPageRoute(
+                   builder: (context) => RecreationScreen()));
+
+               },
+
+    child: Text("Recreations",
+                style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+    ), ),
+            ],
           ),
 
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
-        floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          logout(context);
-          },
-        backgroundColor: Colors.teal,
-         child: const Icon(Icons.logout),
-         ),
+          Row(
+              children:<Widget> [
+                SizedBox(
+                  width: 50,
+                ),
+                Card(
+                  shadowColor: Colors.tealAccent,
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Image.asset('assets/img3.png',width: 110,height: 110,),
+                ),
+                SizedBox(
+                  width: 40,
+                ),
+                Card(
 
-        );
+                  // color: Colors.teal,
+                  shadowColor: Colors.tealAccent,
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+
+
+                  child: Image.asset('assets/img4.jpeg',width: 110,height: 110,),
+                ),
+
+
+
+              ]
+
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Row(
+            children: [
+              SizedBox(
+                width: 60,
+
+              ),
+              SizedBox(
+                height: 50,
+
+                child: Text("  Contacts",
+                  style: TextStyle(fontSize: 15,
+                      fontWeight: FontWeight.bold),),
+              ),
+              SizedBox(
+                width: 90,
+              ),
+              SizedBox(
+                height: 50,
+                child: TextButton(
+                  onPressed: ()
+                  {
+
+                  },
+
+                 child: Text( "Family Gallery",
+               style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                ),),
+            ],
+          ),
+
+        ],
+      ),
+
+
+    );
+
+
+
   }
-
-  Future<void> logout(BuildContext context) async{
-    await FirebaseAuth.instance.signOut();
-    Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context)=>LoginScreen()));
-  }
-
-
 }
+
