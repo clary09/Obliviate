@@ -92,6 +92,13 @@ class _RecreationPageState extends State<RecreationPage> {
               ),
               SizedBox(
                 height: 50,
+                child: TextButton(
+                  onPressed: ()
+                  {
+                    // Navigator.push(context, MaterialPageRoute(
+                    //     builder: (context) => RecreationScreen()));
+
+                  },
                 child: Text("Quizzler",
                   style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
               ),
