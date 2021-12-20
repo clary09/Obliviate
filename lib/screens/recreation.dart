@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:obliviate_app/screens/games.dart';
 import 'package:obliviate_app/screens/home.dart';
 class RecreationScreen extends StatefulWidget {
   const RecreationScreen({Key? key}) : super(key: key);
@@ -48,7 +49,7 @@ class _RecreationPageState extends State<RecreationPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
 
         children: [
-          Padding(padding: EdgeInsets.all(25)),
+          Padding(padding: EdgeInsets.all(65)),
 
           Row(
               children:<Widget> [
@@ -158,11 +159,17 @@ class _RecreationPageState extends State<RecreationPage> {
               ),
               SizedBox(
                 height: 30,
+              child: TextButton(
+              onPressed: ()
+              {
+              Navigator.push(context, MaterialPageRoute(
+              builder: (context) => GameScreen()));
 
+              },
                 child: Text("  Games",
                   style: TextStyle(fontSize: 15,
                       fontWeight: FontWeight.bold),),
-              ),
+              ),),
               SizedBox(
                 width: 90,
               ),
@@ -171,6 +178,8 @@ class _RecreationPageState extends State<RecreationPage> {
                 child: TextButton(
                   onPressed: ()
                   {
+                    // Navigator.push(context, MaterialPageRoute(
+                    //     builder: (context) => GameScreen()));
 
                   },
 
@@ -179,68 +188,7 @@ class _RecreationPageState extends State<RecreationPage> {
                 ),),
             ],
           ),
-          Row(
-              children:<Widget> [
-                SizedBox(
-                  width: 50,
 
-                ),
-                Card(
-                  shadowColor: Colors.tealAccent,
-                  elevation: 8,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-
-                  child: Image.asset('assets/images/paint.png',width: 110,height: 110,),
-                ),
-                SizedBox(
-                  width: 40,
-                ),
-                Card(
-                  shadowColor: Colors.tealAccent,
-                  elevation: 8,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Image.asset('assets/images/who.png',width: 110,height: 110,),
-                ),
-
-              ]
-
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          Row(
-            children: [
-              SizedBox(
-                width: 60,
-
-              ),
-              SizedBox(
-                height: 50,
-                child: Text("Painting",
-                  style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
-              ),
-              SizedBox(
-                width: 90,
-              ),
-              SizedBox(
-                height: 50,
-                child: TextButton(
-                  onPressed: ()
-                  {
-                    // Navigator.push(context, MaterialPageRoute(
-                    //     builder: (context) => RecreationScreen()));
-
-                  },
-
-                  child: Text("Memorizer",
-                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
-                ), ),
-            ],
-          ),
 
         ],
       ),

@@ -32,6 +32,7 @@ class _CureScreenState extends State<CureScreen> {
             BottomNavigationBarItem(
               icon: Icon(Icons.logout),
               title: Text("logout"),
+
             ),
 
         ],
@@ -99,7 +100,25 @@ class _CureScreenState extends State<CureScreen> {
                         borderRadius: BorderRadius.all(Radius.circular(30)),
                         color: Colors.teal,
                       ),
-                     // child: Text("Desined By SHambhavi!")
+                     child: Center(child:
+                     Column(
+                       children: [
+                         SizedBox(height: 30,),
+                         Icon(Icons.attach_email_outlined,color: Colors.white,size: 32,),
+                         SizedBox(height: 5,),
+                         Text("   A little Progress each day ",
+
+                           style: TextStyle(fontSize: 25,color: Colors.white70,
+                               fontWeight: FontWeight.bold),
+                         ),
+                         SizedBox(height: 5,),
+                         Text(" adds up to big Results!!",
+
+                           style: TextStyle(fontSize: 25,color: Colors.white70,
+                               fontWeight: FontWeight.bold),
+                         ),
+                       ],
+                     ))
                      // child: Column(
                      //   children:<Widget> [
                      //     Text("designed by shambhavi"),
@@ -170,8 +189,8 @@ class _ExerciseCard extends StatelessWidget {
                       ],
                     ),
                   ),
-              )
-              ,
+              ),
+
             ],
           ),
 
