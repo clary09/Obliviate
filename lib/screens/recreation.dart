@@ -101,7 +101,7 @@ class _RecreationPageState extends State<RecreationPage> {
                   },
                 child: Text("Quizzler",
                   style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
-              ),
+              ),),
               SizedBox(
                 width: 90,
               ),
