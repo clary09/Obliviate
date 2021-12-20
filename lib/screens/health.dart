@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:obliviate_app/screens/curescreen.dart';
 import 'package:obliviate_app/screens/home.dart';
+import 'package:obliviate_app/screens/notScreen.dart';
+import 'package:obliviate_app/screens/nutriton.dart';
+
+
 class HealthScreen extends StatefulWidget {
   const HealthScreen({Key? key}) : super(key: key);
 
@@ -105,11 +110,11 @@ class _HealthPageState extends State<HealthPage> {
                 child: TextButton(
                   onPressed: ()
                   {
-                    // Navigator.push(context, MaterialPageRoute(
-                    //     builder: (context) => RecreationScreen()));
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => CureScreen()));
 
                   },
-                  child: Text("Exercise",
+                  child: Text("Exercises",
                     style: TextStyle(
                         color: Colors.white70,
                         fontSize: 25,fontWeight: FontWeight.w500),),
@@ -140,11 +145,11 @@ class _HealthPageState extends State<HealthPage> {
                 child: TextButton(
                   onPressed: ()
                   {
-                    // Navigator.push(context, MaterialPageRoute(
-                    //     builder: (context) => RecreationScreen()));
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => NoteScreen()));
 
                   },
-                  child: Text("Sleep Tracker",
+                  child: Text("Notes",
                     style: TextStyle(
                         color: Colors.white70,
                         fontSize: 25,fontWeight: FontWeight.w500),),
@@ -175,8 +180,8 @@ class _HealthPageState extends State<HealthPage> {
                 child: TextButton(
                   onPressed: ()
                   {
-                    // Navigator.push(context, MaterialPageRoute(
-                    //     builder: (context) => RecreationScreen()));
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => DietScreen()));
 
                   },
                   child: Text("Nutrition",
