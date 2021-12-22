@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:obliviate_app/screens/login.dart';
+import 'package:to_do_list_obliviate/screens/todo_list_screen.dart';
 // import 'package:firebase_core/firebase_core.dart';
 
 Future <void> main() async {
@@ -58,5 +59,20 @@ class _SplashScreenState extends State<SplashScreen> {
 
       );
 
+  }
+}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Todo List',
+      home: Scaffold(
+        backgroundColor: Colors.teal[800],
+        body:
+      TodoListScreen(),
+      ),
+
+    );
   }
 }
