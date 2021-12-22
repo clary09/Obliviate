@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:obliviate_app/screens/health.dart';
-
+import 'package:obliviate_app/screens/family.dart';
 import 'package:obliviate_app/screens/profile.dart';
 import 'package:obliviate_app/screens/recreation.dart';
 class SideDrawer extends StatelessWidget {
@@ -243,7 +243,8 @@ class _MainPageState extends State<MainPage> {
                 child: TextButton(
                   onPressed: ()
                   {
-
+                     Navigator.push(context, MaterialPageRoute(
+                   builder: (context) => FamilyScreen()));
                   },
 
                  child: Text( "Family Gallery",
