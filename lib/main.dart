@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:obliviate_app/screens/login.dart';
@@ -21,7 +23,40 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.teal,
       ),
-      home: LoginScreen(),
+      home: SplashScreen(),
     );
+  }
+}
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(Duration(milliseconds: 1700), (){
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> LoginScreen()));
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return  Container(
+        width: MediaQuery.of(context).size.width,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.fill,
+            image: AssetImage("assets/splash.jpeg"),
+          ),
+        ),
+
+      );
+
   }
 }
