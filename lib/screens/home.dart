@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:obliviate_app/screens/family_gallery.dart';
 import 'package:obliviate_app/screens/health.dart';
-import 'package:obliviate_app/screens/family.dart';
+import 'package:obliviate_app/screens/help.dart';
+import 'package:obliviate_app/screens/phone.dart';
+import 'package:obliviate_app/screens/precautions.dart';
+
 import 'package:obliviate_app/screens/profile.dart';
 import 'package:obliviate_app/screens/recreation.dart';
 class SideDrawer extends StatelessWidget {
@@ -43,13 +47,16 @@ class SideDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.border_color),
-            title: Text('Know more About Alzeheimer'),
-            onTap: () => {Navigator.of(context).pop()},
+            title: Text('Precautions'),
+            onTap: () => {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => PrecautionScreen()))
+              },
           ),
           ListTile(
             leading: Icon(Icons.info),
             title: Text('Info'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => ExpandableTutorial()))
+    },
           ),
         ],
       ),
@@ -104,7 +111,7 @@ class _MainPageState extends State<MainPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
 
         children: [
-          Padding(padding: EdgeInsets.all(45)),
+          Padding(padding: EdgeInsets.all(35)),
           Row(
             children: [
               SizedBox(
@@ -184,7 +191,9 @@ class _MainPageState extends State<MainPage> {
     ), ),
             ],
           ),
-
+         SizedBox(
+          height: 20,
+         ),
           Row(
               children:<Widget> [
                 SizedBox(
@@ -230,21 +239,27 @@ class _MainPageState extends State<MainPage> {
               ),
               SizedBox(
                 height: 50,
+              child: TextButton(
+           onPressed: ()
+          {
+          Navigator.push(context, MaterialPageRoute(
+          builder: (context) => PhoneScreen()));
+          },
 
-                child: Text("  Contacts",
+                child: Text("Appointment",
                   style: TextStyle(fontSize: 15,
                       fontWeight: FontWeight.bold),),
-              ),
+              ),),
               SizedBox(
-                width: 90,
+                width: 50,
               ),
               SizedBox(
                 height: 50,
                 child: TextButton(
                   onPressed: ()
                   {
-                     Navigator.push(context, MaterialPageRoute(
-                   builder: (context) => FamilyScreen()));
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => FamilyScreen()));
                   },
 
                  child: Text( "Family Gallery",

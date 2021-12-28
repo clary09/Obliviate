@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:obliviate_app/screens/music.dart';
+import 'package:obliviate_app/screens/games.dart';
 import 'package:obliviate_app/screens/home.dart';
-import 'package:obliviate_app/screens/quizzler.dart';
+import 'package:obliviate_app/screens/music.dart';
+import 'package:obliviate_app/screens/quizzler_folder/quizzler.dart';
+
 class RecreationScreen extends StatefulWidget {
   const RecreationScreen({Key? key}) : super(key: key);
 
@@ -12,7 +14,7 @@ class RecreationScreen extends StatefulWidget {
 class _RecreationScreenState extends State<RecreationScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+     return Scaffold(
 
       appBar: AppBar(
         leading: IconButton(
@@ -45,161 +47,162 @@ class _RecreationPageState extends State<RecreationPage> {
   Widget build(BuildContext context) {
     return Center(
 
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+      child: Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
 
+        children: [
+          Padding(padding: EdgeInsets.all(65)),
+
+          Row(
+              children:<Widget> [
+                SizedBox(
+                  width: 50,
+
+                ),
+                Card(
+                  shadowColor: Colors.tealAccent,
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+
+                  child: Image.asset('assets/images/quiz.png',width: 110,height: 110,),
+                ),
+                SizedBox(
+                  width: 40,
+                ),
+                Card(
+                  shadowColor: Colors.tealAccent,
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Image.asset('assets/images/music.png',width: 110,height: 110,),
+                ),
+
+              ]
+
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Row(
             children: [
-        Padding(padding: EdgeInsets.all(65)),
+              SizedBox(
+                width: 60,
 
-    Row(
-    children:<Widget> [
-    SizedBox(
-    width: 50,
+              ),
+              SizedBox(
+                height: 50,
+              child: TextButton(
+           onPressed: ()
+              {
+             Navigator.push(context, MaterialPageRoute(
+                 builder: (context) => QuizScreen()));
 
-    ),
-    Card(
-    shadowColor: Colors.tealAccent,
-    elevation: 8,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(10),
-    ),
+            },
 
-    child: Image.asset('assets/images/quiz.png',width: 110,height: 110,),
-    ),
-    SizedBox(
-    width: 40,
-    ),
-    Card(
-    shadowColor: Colors.tealAccent,
-    elevation: 8,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(30),
-    ),
-    child: Image.asset('assets/images/music.png',width: 110,height: 110,),
-    ),
+            child: Text("Quizzler",
+                  style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+              ),),
+              SizedBox(
+                width: 90,
+              ),
+              SizedBox(
+                height: 50,
+                child: TextButton(
+                  onPressed: ()
+                  {
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => MusicScreen()));
 
-    ]
+                  },
 
-    ),
-    SizedBox(
-    height: 30,
-    ),
-    Row(
-    children: [
-    SizedBox(
-    width: 60,
+                  child: Text("Musics",
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                ), ),
+            ],
+          ),
 
-    ),
-    SizedBox(
-    height: 50,
-    child: TextButton(
-    onPressed: ()
-    {
-    Navigator.push(context, MaterialPageRoute(
-    builder: (context) => QuizScreen()));
+          Row(
+              children:<Widget> [
+                SizedBox(
+                  width: 50,
+                ),
+                Card(
+                  shadowColor: Colors.tealAccent,
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Image.asset('assets/images/games.png',width: 110,height: 110,),
+                ),
+                SizedBox(
+                  width: 40,
+                ),
+                Card(
 
-    },
-    child: Text("Quizzler",
-    style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
-    )),
-    SizedBox(
-    width: 90,
-    ),
-    SizedBox(
-    height: 50,
-    child: TextButton(
-    onPressed: ()
-    {
-    Navigator.push(context, MaterialPageRoute(
-    builder: (context) => MusicScreen()));
-
-    },
-
-    child: Text("Musics",
-    style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
-    ), ),
-    ],
-    ),
-
-    Row(
-    children:<Widget> [
-    SizedBox(
-    width: 50,
-    ),
-    Card(
-    shadowColor: Colors.tealAccent,
-    elevation: 8,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(10),
-    ),
-    child: Image.asset('assets/images/games.png',width: 110,height: 110,),
-    ),
-    SizedBox(
-    width: 40,
-    ),
-    Card(
-
-    // color: Colors.teal,
-    shadowColor: Colors.tealAccent,
-    elevation: 8,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(10),
-    ),
+                  // color: Colors.teal,
+                  shadowColor: Colors.tealAccent,
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
 
 
-    child: Image.asset('assets/images/chatbot.png',width: 110,height: 110,),
-    ),
+                  child: Image.asset('assets/images/chatbot.png',width: 110,height: 110,),
+                ),
 
 
 
-    ]
+              ]
 
-    ),
-    SizedBox(
-    height: 30,
-    ),
-    Row(
-    children: [
-    SizedBox(
-    width: 60,
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Row(
+            children: [
+              SizedBox(
+                width: 60,
 
-    ),
-    SizedBox(
-    height: 30,
-    child: TextButton(
-    onPressed: ()
-    {
-    //Navigator.push(context, MaterialPageRoute(
-    //builder: (context) => GameScreen()));
+              ),
+              SizedBox(
+                height: 30,
+              child: TextButton(
+              onPressed: ()
+              {
+              Navigator.push(context, MaterialPageRoute(
+              builder: (context) => GameScreen()));
 
-    },
-    child: Text("  Games",
-    style: TextStyle(fontSize: 15,
-    fontWeight: FontWeight.bold),),
-    ),),
-    SizedBox(
-    width: 90,
-    ),
-    SizedBox(
-    height: 30,
-    child: TextButton(
-    onPressed: ()
-    {
-    // Navigator.push(context, MaterialPageRoute(
-    //     builder: (context) => GameScreen()));
+              },
+                child: Text("  Games",
+                  style: TextStyle(fontSize: 15,
+                      fontWeight: FontWeight.bold),),
+              ),),
+              SizedBox(
+                width: 90,
+              ),
+              SizedBox(
+                height: 30,
+                child: TextButton(
+                  onPressed: ()
+                  {
+                    // Navigator.push(context, MaterialPageRoute(
+                    //     builder: (context) => GameScreen()));
 
-    },
+                  },
 
-    child: Text( "Chatbot",
-    style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
-    ),),
-    ],
-    ),
+                  child: Text( "Chatbot",
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                ),),
+            ],
+          ),
 
 
-    ],
-    ),
+        ],
+      ),
     );
 
 

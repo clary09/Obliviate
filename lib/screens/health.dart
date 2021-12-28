@@ -4,6 +4,8 @@ import 'package:obliviate_app/screens/home.dart';
 import 'package:obliviate_app/screens/notScreen.dart';
 import 'package:obliviate_app/screens/nutriton.dart';
 
+import 'package:obliviate_app/screens/todo_list/todo_list_screen.dart';
+
 
 class HealthScreen extends StatefulWidget {
   const HealthScreen({Key? key}) : super(key: key);
@@ -76,11 +78,11 @@ class _HealthPageState extends State<HealthPage> {
               child: TextButton(
                 onPressed: ()
                 {
-                  // Navigator.push(context, MaterialPageRoute(
-                  //     builder: (context) => RecreationScreen()));
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => TodoListScreen()));
 
                 },
-                child: Text("Pill Reminder",
+                child: Text("Tasks",
                   style: TextStyle(
                        color: Colors.white70,
                       fontSize: 25,fontWeight: FontWeight.w500),),
@@ -136,7 +138,7 @@ class _HealthPageState extends State<HealthPage> {
                   borderRadius: BorderRadius.circular(10),
                 ),
 
-                child: Image.asset('assets/health/sleep.png',width: 120,height: 120,), ),
+                child: Image.asset('assets/health/notes.png',width: 120,height: 120,), ),
               SizedBox(
                 width: 10,
               ),
@@ -149,7 +151,7 @@ class _HealthPageState extends State<HealthPage> {
                         builder: (context) => NoteScreen()));
 
                   },
-                  child: Text("Notes",
+                  child: Text("Notes Maker",
                     style: TextStyle(
                         color: Colors.white70,
                         fontSize: 25,fontWeight: FontWeight.w500),),

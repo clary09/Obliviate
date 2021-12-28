@@ -123,11 +123,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               )
 
 
-
-              // ActionChip(label: Text("Logout"), onPressed: (){
-              //   logout(context);
-              // }),
-
             ],
           ),
         ),

@@ -13,22 +13,28 @@ final exer = [Exercise(
     descrip: "Endurance/Aerobic"),
 
   Exercise(
-      name: "Marching",
-      img: 'assets/exercise/e1.png',
-      tt: "20 mins",
-      descrip: "Endurance/Aerobic"),
+      name: "Yoga",
+      img: 'assets/exercise/yoga.png',
+      tt: "60 mins",
+      descrip: "Meditation"),
 
   Exercise(
-      name: "Marching",
-      img: 'assets/exercise/e1.png',
-      tt: "20 mins",
-      descrip: "Endurance/Aerobic"),
+      name: "Muscle Flexiblity",
+      img: 'assets/exercise/muscle.png',
+      tt: "30 mins",
+      descrip: "Flexible Enhancement"),
 
-  // Exercise(
-  //     name: "Marching",
-  //     img: 'assets/exercise/e1.png',
-  //     tt: "20 mins",
-  //     descrip: "Endurance/Aerobic"),
+  Exercise(
+      name: "Stretching",
+      img: 'assets/exercise/e2.png',
+      tt: "40 mins",
+      descrip: "Enhances Tolerance"),
+
+  Exercise(
+      name: "Bending",
+      img: 'assets/exercise/knee.png',
+      tt: "40 mins",
+      descrip: "Enhances Retentivity"),
 
 
 ];
