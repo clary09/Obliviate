@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:obliviate_app/screens/home.dart';
+import 'package:obliviate_app/screens/phone.dart';
 class PrecautionScreen extends StatefulWidget {
   const PrecautionScreen({Key? key}) : super(key: key);
 
@@ -16,11 +17,12 @@ class _PrecautionScreenState extends State<PrecautionScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(
-              builder: (context) => HomeScreen()));
+              builder: (context) => PhoneScreen()));
         },
         backgroundColor: Colors.blue[200],
-        child: const Icon(Icons.arrow_back,color: Colors.black,),
+        child: const Icon(Icons.medication,color: Colors.black,size: 35,),
       ),
+
       backgroundColor: Colors.blue[100],
       body: Stack(
         children:<Widget> [

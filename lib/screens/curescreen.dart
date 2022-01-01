@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:obliviate_app/model/exercise.dart';
 import 'package:obliviate_app/screens/health.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CureScreen extends StatefulWidget {
 
@@ -14,12 +15,24 @@ class _CureScreenState extends State<CureScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      // floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: ()  {
+      //
+      //     Navigator.push(context, MaterialPageRoute(
+      //         builder: (context) => HealthScreen()));
+      //     // logout(context);
+      //   },
+      //   backgroundColor: Colors.teal,
+      //   child: const Icon(Icons.arrow_back_ios_new_sharp),
+      // ),
       bottomNavigationBar: ClipRRect(
         borderRadius: BorderRadius.vertical(top: Radius.circular(40)),
         child: BottomNavigationBar(
 
           items: [
             BottomNavigationBarItem(
+
               icon: Icon(Icons.arrow_back),
               title: Text("Back"),
             ),
@@ -103,8 +116,11 @@ class _CureScreenState extends State<CureScreen> {
                      child: Center(child:
                      Column(
                        children: [
-                         SizedBox(height: 30,),
-                         Icon(Icons.attach_email_outlined,color: Colors.white,size: 32,),
+                         SizedBox(height: 20,),
+                         IconButton(icon:Icon(Icons.ondemand_video_sharp,color: Colors.white,size: 42,), onPressed: () async {
+                           final url ="https://www.youtube.com/watch?v=gECNsPHgbc0";
+                           if (!await launch(url)) throw 'Could not launch $url';
+                         },),
                          SizedBox(height: 5,),
                          Text("   A little Progress each day ",
 
@@ -117,17 +133,10 @@ class _CureScreenState extends State<CureScreen> {
                            style: TextStyle(fontSize: 25,color: Colors.white70,
                                fontWeight: FontWeight.bold),
                          ),
+
                        ],
                      ))
-                     // child: Column(
-                     //   children:<Widget> [
-                     //     Text("designed by shambhavi"),
-                     //     Text("designed by shambhavi"),
-                     //   ],
-                     //
-                     // ),
-                      
-                      // child: ,
+
                     ),
                     ),
 
@@ -139,6 +148,7 @@ class _CureScreenState extends State<CureScreen> {
         ],
 
       ),
+
     );
   }
 }

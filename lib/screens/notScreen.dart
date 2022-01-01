@@ -14,18 +14,18 @@ class _NoteScreenState extends State<NoteScreen> {
   CollectionReference ref = FirebaseFirestore.instance.collection('users')
       .doc(
       FirebaseAuth.instance.currentUser!.uid).collection('notes');
-  // List<Color> myColors = [
-  //   Colors.white60,
-  //   Colors.cyanAccent,
-  //   Colors.red,
-  //   Colors.green,
-  //   Colors.deepPurple,
-  //   Colors.purple,
-  //   Colors.cyan,
-  //   Colors.teal,
-  //   Colors.tealAccent,
-  //   Colors.pink,
-  // ];
+  List<Color> myColors = [
+    Colors.amber,
+    Colors.cyanAccent,
+    Colors.lightGreenAccent,
+    Colors.greenAccent,
+    Colors.redAccent,
+    Colors.purple,
+    Colors.cyan,
+    Colors.teal,
+    Colors.tealAccent,
+    Colors.pink,
+  ];
 
 
 
@@ -34,9 +34,10 @@ class _NoteScreenState extends State<NoteScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white60,
+      // backgroundColor: Colors.white60,
+      backgroundColor: Colors.black45,
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.white38,
         actions: <Widget>[
           Padding(
               padding: EdgeInsets.only(right: 20.0),
@@ -57,7 +58,7 @@ class _NoteScreenState extends State<NoteScreen> {
 
       ),
      floatingActionButton: FloatingActionButton(
-       backgroundColor: Colors.teal,
+       backgroundColor: Colors.white38,
        onPressed: () {
          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> AddNote(),),);
        },
@@ -80,9 +81,9 @@ class _NoteScreenState extends State<NoteScreen> {
               return ListView.builder(
                   itemCount: snapshot.data!.docs.length,
                   itemBuilder: (context, index){
-                    // Random random = new Random();
-                    // Color bg = myColors[random.nextInt(4)];
-                    Color bg = Colors.white60;
+                    Random random = new Random();
+                    Color bg = myColors[random.nextInt(10 )];
+                    // Color bg = Colors.white60;
                     var data = snapshot.data!.docs[index].data();
                     data = data.toString();
 

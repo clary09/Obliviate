@@ -172,76 +172,7 @@ class Card2 extends StatelessWidget {
     );
   }
 }
-// class Card3 extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return ExpandableNotifier(
-//       child: Padding(
-//         padding: EdgeInsets.all(10),
-//         child: Card(
-//           color: Colors.teal[100],
-//           child: Column(
-//             children: [
-//               SizedBox(
-//                 height: 150,
-//                 child: Container(
-//                   child: Icon(Icons.accessibility_outlined,size: 100,),
-//                   decoration: BoxDecoration(
-//                     // color: Colors.white60,
-//                     // shape: BoxShape.circle,
-//                   ),
-//                 ),
-//               ),
-//               ScrollOnExpand(
-//                 child: ExpandablePanel(
-//                   theme: ExpandableThemeData(
-//                       tapBodyToCollapse: true,
-//                       tapBodyToExpand: true
-//                   ),
-//                   header: Padding(
-//                     padding: EdgeInsets.all(10),
-//                     child: Text(
-//                       "HEALTH",
-//                       style: TextStyle(color: Colors.black),
-//                     ),
-//                   ),
-//                   expanded: Column(
-//                     crossAxisAlignment: CrossAxisAlignment.start,
-//                     children: <Widget>[
-//
-//                       Padding(
-//                         padding: EdgeInsets.only(bottom: 10),
-//                         child: Text("The health tabs helps take acount of your day to day activities tacke ca",
-//                             softWrap: true,
-//                             overflow: TextOverflow.fade,
-//                             style: TextStyle(color: Colors.black)),
-//                       ),
-//                     ],
-//                   ),
-//                   collapsed: Text("health should be a priority",
-//                       softWrap: true,
-//                       maxLines: 2,
-//                       overflow: TextOverflow.ellipsis,
-//                       style: TextStyle(color: Colors.black)),
-//                   builder: (_, collapsed, expanded) {
-//                     return Padding(
-//                       padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-//                       child: Expandable(
-//                         collapsed: collapsed,
-//                         expanded: expanded,
-//                         theme: const ExpandableThemeData(crossFadePoint: 0),
-//                       ),
-//                     );
-//                   },
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+
 class Card4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -33,7 +33,7 @@ final doc = [Doctor(
   ),
   Doctor(
     name: "Dr Yash ",
-    img: 'assets/doctor/doc.png',
+    img: 'assets/doctor/doc2.png',
     tt: "Dietician",
     cal: "4.4",
     num: "919835049789",

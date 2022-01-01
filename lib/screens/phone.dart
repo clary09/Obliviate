@@ -156,6 +156,7 @@ class _DocCard extends StatelessWidget {
                       ),
                           Row(
                             children: [
+                              IconButton( icon:Icon(Icons.sms),  onPressed: () => launch("sms:${doc.num}")),
                               IconButton(icon: Icon(Icons.call), onPressed: () async {
                                 launch('tel://${doc.num}');
                                 await FlutterPhoneDirectCaller.callNumber(doc.num);
@@ -163,6 +164,7 @@ class _DocCard extends StatelessWidget {
                               IconButton(icon: Icon(Icons.mail), onPressed: _sendEmail
 
                               ,),
+
 
                             ],
                           ),

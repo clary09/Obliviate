@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:obliviate_app/screens/family_gallery.dart';
 import 'package:obliviate_app/screens/health.dart';
 import 'package:obliviate_app/screens/help.dart';
+import 'package:obliviate_app/screens/message.dart';
 import 'package:obliviate_app/screens/phone.dart';
 import 'package:obliviate_app/screens/precautions.dart';
 
 import 'package:obliviate_app/screens/profile.dart';
 import 'package:obliviate_app/screens/recreation.dart';
+
 class SideDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class SideDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.call),
             title: Text('Emergency call'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => { },
           ),
           ListTile(
             leading: Icon(Icons.border_color),
@@ -85,7 +87,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
       floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: ()  {
+
+
           // logout(context);
         },
         backgroundColor: Colors.teal,

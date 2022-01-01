@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:obliviate_app/screens/curescreen.dart';
 import 'package:obliviate_app/screens/home.dart';
+import 'package:obliviate_app/screens/message.dart';
 import 'package:obliviate_app/screens/notScreen.dart';
 import 'package:obliviate_app/screens/nutriton.dart';
 
@@ -20,6 +21,16 @@ class _HealthScreenState extends State<HealthScreen> {
     return Scaffold(
       // backgroundColor: Colors.cyan[50],
       backgroundColor: Colors.cyan[900],
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: ()  {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => MessageScreen()));
+
+          // logout(context);
+        },
+        backgroundColor: Colors.white38,
+        child: const Icon(Icons.message),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.black38,
         leading: IconButton(
