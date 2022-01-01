@@ -19,9 +19,9 @@ class _MessageScreenState extends State<MessageScreen> {
 
     return Scaffold(
 
-      backgroundColor: Colors.cyan[900],
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.black38,
+        backgroundColor: Colors.cyan[900],
         // backgroundColor: Colors.cyan[800],
         title: Text("Send Reminders",), centerTitle: true,foregroundColor: Colors.white,
       ),
