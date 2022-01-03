@@ -20,9 +20,10 @@ class _HealthScreenState extends State<HealthScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Colors.cyan[50],
-      backgroundColor: Colors.cyan[900],
+      backgroundColor: Colors.cyan[200],
       floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
       floatingActionButton: FloatingActionButton(
+        foregroundColor: Colors.white,
         onPressed: ()  {
           Navigator.push(context, MaterialPageRoute(builder: (context) => MessageScreen()));
 

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:obliviate_app/screens/emergency.dart';
 import 'package:obliviate_app/screens/family_gallery.dart';
 import 'package:obliviate_app/screens/health.dart';
 import 'package:obliviate_app/screens/help.dart';
@@ -45,7 +46,7 @@ class SideDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.call),
             title: Text('Emergency call'),
-            onTap: () => { },
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => EmergencyCall())) },
           ),
           ListTile(
             leading: Icon(Icons.border_color),
