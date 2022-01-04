@@ -1,5 +1,3 @@
-
-
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -40,7 +38,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
 
 
           children: [
-          SizedBox(height: 10,),
+            SizedBox(height: 10,),
             Card(
               shadowColor: Colors.tealAccent,
               elevation: 8,
@@ -63,8 +61,8 @@ class _FamilyScreenState extends State<FamilyScreen> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: OutlinedButton(onPressed: () {
-              imageSelect();
-          }, child: const Text("Upload Image")),
+                imageSelect();
+              }, child: const Text("Upload Image")),
             ),
             // Container(
             //   width: 30,
@@ -79,8 +77,8 @@ class _FamilyScreenState extends State<FamilyScreen> {
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         width: 110,
-                          height: 100,
-                          child: Image.network('https://media.istockphoto.com/photos/portrait-of-smiling-optimistic-beard-pensioner-man-wear-light-blue-picture-id1287789056?b=1&k=20&m=1287789056&s=170667a&w=0&h=Z5fxguvjTc6keKU8HUbqTznSA3LNnIsn0ZYl9UyRhTc=',fit: BoxFit.cover,),
+                        height: 100,
+                        child: Image.network('https://media.istockphoto.com/photos/portrait-of-smiling-optimistic-beard-pensioner-man-wear-light-blue-picture-id1287789056?b=1&k=20&m=1287789056&s=170667a&w=0&h=Z5fxguvjTc6keKU8HUbqTznSA3LNnIsn0ZYl9UyRhTc=',fit: BoxFit.cover,),
                       ),
                     ),
                     Padding(
@@ -129,43 +127,36 @@ class _FamilyScreenState extends State<FamilyScreen> {
               child: GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
                   itemCount: _imageList.length,
                   itemBuilder: (BuildContext context , int index){
-                return Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Stack(
-                    fit: StackFit.expand,
+                    return Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Stack(
+                        fit: StackFit.expand,
 
-                    children: [
-                      Image.file(File(_imageList[index].path), fit: BoxFit.cover,),
+                        children: [
+                          Image.file(File(_imageList[index].path), fit: BoxFit.cover,),
+                          Align(
 
+                            alignment: Alignment.bottomCenter,
+                            child:TextField (
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(),
 
-
-                    Positioned(
-                        left: 4,
-                        top: 4,
-                        child: Container(
-                          width: 30,
-                          height: 30,
-                          color: Color.fromRGBO(255, 255, 244, 0.5),
-                          child: IconButton(
-                            icon: Icon(Icons.delete,size: 20,),
-                            color: Colors.teal,
-                            onPressed: () {
-                              _imageList.removeAt(index);
-                              setState(() {});
-                            },),
-                        ),
-                      )
+                              ),
+                            ),
+                          ),
                     ],
 
-                  ),
-                );
+
+                      ),
+                    );
                   }
               ),
             )
+
           ],
-          ),
         ),
-      );
+      ),
+    );
 
   }
 

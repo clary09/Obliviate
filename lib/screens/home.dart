@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:obliviate_app/screens/emergency.dart';
 import 'package:obliviate_app/screens/family_gallery.dart';
 import 'package:obliviate_app/screens/health.dart';
 import 'package:obliviate_app/screens/help.dart';
+import 'package:obliviate_app/screens/homemap.dart';
+import 'package:obliviate_app/screens/locations.dart';
 import 'package:obliviate_app/screens/message.dart';
 import 'package:obliviate_app/screens/phone.dart';
 import 'package:obliviate_app/screens/precautions.dart';
+import 'package:obliviate_app/screens/homemap.dart';
 
 import 'package:obliviate_app/screens/profile.dart';
 import 'package:obliviate_app/screens/recreation.dart';
@@ -40,13 +42,15 @@ class SideDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.home),
-            title: Text('Home Location'),
-            onTap: () => {},
+            title: Text('Home And Frequent Places'),
+            onTap: () => {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeMap()))
+            },
           ),
           ListTile(
             leading: Icon(Icons.call),
             title: Text('Emergency call'),
-            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => EmergencyCall())) },
+            onTap: () => { },
           ),
           ListTile(
             leading: Icon(Icons.border_color),
@@ -90,7 +94,8 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: ()  {
 
-
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context) =>LocationsPage()));
           // logout(context);
         },
         backgroundColor: Colors.teal,
