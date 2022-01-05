@@ -171,7 +171,7 @@ class _LoginScreenState extends State<LoginScreen> {
     {
       await  _auth.signInWithEmailAndPassword(email: email, password: password)
           .then((uid)=>{
-            Fluttertoast.showToast(msg:"Login Succesfull"),
+            Fluttertoast.showToast(msg:"Login Succesful"),
         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (contex)=>HomeScreen()))
       }).catchError((e)
       {
