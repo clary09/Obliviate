@@ -188,9 +188,18 @@ class _RecreationPageState extends State<RecreationPage> {
                 height: 30,
                 child: TextButton(
                   onPressed: ()
-                  {
+                  async {
                     // Navigator.push(context, MaterialPageRoute(
                     //     builder: (context) => GameScreen()));
+                    try {
+                      dynamic conversationObject = {
+                        'appId': 'a23f440623216dbeb41afad50aaed5c1' // The [APP_ID](https://dashboard.kommunicate.io/settings/install) obtained from kommunicate dashboard.
+                      };
+                      dynamic result = await KommunicateFlutterPlugin.buildConversation(conversationObject);
+                      print("Conversation builder success : " + result.toString());
+                    } on Exception catch (e) {
+                      print("Conversation builder error occurred : " + e.toString());
+                    }
 
                   },
 
