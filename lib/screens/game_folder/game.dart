@@ -137,9 +137,44 @@ class _GameState extends State<Game> {
       body: SafeArea(
         child: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Text("Level: ${gameData.level}", style: TextStyle(fontSize: 40)),
-            Text("Score: ${gameData.score}", style: TextStyle(fontSize: 30)),
-            Text("Time left: $timeLeft", style: TextStyle(fontSize: 30)),
+
+
+
+
+
+            Card(
+
+             shadowColor: Colors.tealAccent,
+              elevation: 8,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+                child: Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: Text("Level: ${gameData.level}", style: TextStyle(fontSize: 40)),
+                )),
+          Card(
+
+              shadowColor: Colors.tealAccent,
+              elevation: 8,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            child:Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Text("Score: ${gameData.score}", style: TextStyle(fontSize: 30)),
+            )),
+            Card(
+
+                shadowColor: Colors.tealAccent,
+                elevation: 8,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+            child:Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Text("Time left: $timeLeft", style: TextStyle(fontSize: 30)),
+            )),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Flexible(
@@ -172,6 +207,17 @@ class _GameState extends State<Game> {
                 ),
               ),
             ),
+            Card(
+              shadowColor: Colors.tealAccent,
+              elevation: 8,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Choose the odd one out!",style: TextStyle(fontSize: 20)),
+              ),
+            ),
           ]),
         ),
       ),
@@ -192,17 +238,14 @@ class _GameState extends State<Game> {
             child: SimpleDialog(
               title: const Center(
                 child: Text(
-                  'Game Over!',
-                  style: TextStyle(fontSize: 50),
+                  'Game Over :(',
+                  style: TextStyle(fontSize: 30,color: Colors.teal),
                 ),
               ),
               children: [
                 SimpleDialogOption(
                   onPressed: () {
-                    // Navigator.popUntil(context, ModalRoute.withName('/home'));
-                    // return true;
-                    // this.deactivate();}
-                    // Navigator.
+
                     Navigator.pop(context, true);
                     continuePlaying();
                     // return true;
