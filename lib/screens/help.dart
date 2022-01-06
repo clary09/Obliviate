@@ -1,5 +1,6 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ExpandableTutorial extends StatefulWidget {
   @override
@@ -186,7 +187,11 @@ class Card4 extends StatelessWidget {
               SizedBox(
                 height: 150,
                 child: Container(
-                  child: Icon(Icons.videocam ,size: 100,),
+                  // child: Icon(Icons.videocam ,size: 100,),
+                  child: IconButton(icon:Icon(Icons.videocam,color: Colors.black,size: 100,), onPressed: () async {
+                    final url ="https://youtu.be/zKJ_SAC2948";
+                    if (!await launch(url)) throw 'Could not launch $url';
+                  },),
                   decoration: BoxDecoration(
                     // color: Colors.white60,
                     // shape: BoxShape.circle,
@@ -212,7 +217,7 @@ class Card4 extends StatelessWidget {
 
                       Padding(
                         padding: EdgeInsets.only(bottom: 10),
-                        child: Text("click here",
+                        child: Text("click on the video camera to see the guide",
                             softWrap: true,
                             overflow: TextOverflow.fade,
                             style: TextStyle(color: Colors.black)),
