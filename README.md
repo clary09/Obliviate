@@ -5,7 +5,7 @@
 
 
 ### Tech Stack: 
-**Flutter**
+**Flutter**,
 **Firebase**
 
 
