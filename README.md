@@ -5,14 +5,11 @@
 ### Tech Stack - Flutter, Firebase 
 
 ## Our Problem  ❔
-We are a composite of a life experiences with memory laid upon memory
-We develop personality of who we are and a place for ourselves in this world
- **But what will you do when your one cherished memories are gone forever?**
- Over 55 million people worldwide are living with Alzheimer's as per the 2021 statistics.
+We are a composite of a life experiences with memory laid upon memory. We develop personality of who we are and a place for ourselves in this world.
+**But what will you do when your one cherished memories are gone forever?** 
+Over 55 million people worldwide are living with Alzheimer's as per the 2021 statistics.
  
-The most common form of dementia leads to progressive cognitive decline beginning with impaired memory. They are robbed of their memory like missing pieces of a puzzle.
-Affecting their intellectual functions and may lead to complete dependence for basic daily life functions.
-Names date and places they have known sofa in their entire life fades into mists of non recognition.
+The most common form of dementia leads to progressive cognitive decline beginning with impaired memory. They are robbed of their memory like missing pieces of a puzzle. Affecting their intellectual functions and may lead to complete dependence for basic daily life functions. Names date and places they have known sofa in their entire life fades into mists of non recognition.
 
 ## Our Solution  :bulb:
 Introducing Obliviate a **mobile application** through this app we aim to cater with this very destructive ,irreversible and progressive disease .We are using the power of handiest gadget mobile phone  to serve people suffering with Alzheimer’s.
