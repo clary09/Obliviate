@@ -39,13 +39,13 @@ https://user-images.githubusercontent.com/91636803/148514454-ad33acf1-25a9-41e1-
 
 
 ### How to run :
-**_Clone the repository._**
+**_1) Clone the repository._**
 
-**_Open in Android studio using git version control._**
+**_2) Open in Android studio using git version control._**
 
-**_Pub get the pubspec.yaml file._**
+**_3) Pub get the pubspec.yaml file._**
 
-**_Run the file in your emulator._**
+**_4) Run the file in your emulator._**
 
 
 
@@ -66,6 +66,5 @@ SHAMBHAVI SINGH   -  IMH/10022/20
 
 
 
-![Visitor Count](https://profile-counter.glitch.me/{YOUR USER}/count.svg)
 
 
