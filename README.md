@@ -52,7 +52,6 @@ https://user-images.githubusercontent.com/91636803/148514454-ad33acf1-25a9-41e1-
 
 
 
-## Demonstration of our App :
 ## [ Demonstration Link ](https://youtu.be/zKJ_SAC2948)
 
 
