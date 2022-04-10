@@ -1,3 +1,7 @@
+
+
+
+
 # Obliviate :gem:
 **_You can close your eyes to reality but not to memories._**
 
@@ -92,6 +96,11 @@ This is the Family Gallery in which the patient can store the pictures and names
 
 ![obli](https://user-images.githubusercontent.com/91636803/148442581-3ad3b958-7f30-4c99-b391-3b0004f2e15c.png)
 
+
+### App Demo:
+
+
+https://user-images.githubusercontent.com/82439481/162602321-fef0ac18-7f98-4d90-97ae-ced020b38bf0.mov
 
 
 
