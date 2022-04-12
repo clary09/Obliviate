@@ -139,11 +139,11 @@ https://user-images.githubusercontent.com/91636803/148514454-ad33acf1-25a9-41e1-
 
 
 ### Duck Debuggers 🐤
-**AIN FATIMA          -  IMH/10020/20**
+**AIN FATIMA          -  Added Home Map and Frequent Places, Locations, Family Gallery, Quizzler, Music**
 
-**RIYA SINGH          -  IMH/10026/20**
+**RIYA SINGH          -  Added ChatBot, Splash Screen, App Icon, Todo-list**
 
-**SHAMBHAVI SINGH     -  IMH/10022/20**
+**SHAMBHAVI SINGH     -  Added Login Screen, Exercises, Nutrition, Task, Set Reminder, Appointments, Games, Side-Drawer**
 
 
 
