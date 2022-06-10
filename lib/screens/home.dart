@@ -12,6 +12,7 @@ import 'package:obliviate_app/screens/precautions.dart';
 
 import 'package:obliviate_app/screens/profile.dart';
 import 'package:obliviate_app/screens/recreation.dart';
+import 'package:alan_voice/alan_voice.dart';
 
 class SideDrawer extends StatelessWidget {
   @override
@@ -78,7 +79,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+_HomeScreenState() {
+    /// Init Alan Button with project key from Alan Studio
+    AlanVoice.addButton("01c2ece0661486bd409f3f848c23eee32e956eca572e1d8b807a3e2338fdd0dc/stage",
+        buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);
 
+    /// Handle commands from Alan Studio
+    AlanVoice.onCommand.add((command) {
+      debugPrint("got new command ${command.toString()}");
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
