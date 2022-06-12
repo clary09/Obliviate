@@ -115,6 +115,16 @@ https://user-images.githubusercontent.com/91636803/148514454-ad33acf1-25a9-41e1-
    * Use Face recognition system to open the app.
    
 
+# What's the latest update?
+
+With Alan’s voice assistant SDK for Flutter, a voice assistant has been embeded to Obliviate app. 
+
+The Alzhiemer's patient will be able to tap the voice assistant and give custom voice commands, and Alan will reply to them. Alan will guide them in using the app and also motivate them.
+
+
+
+https://user-images.githubusercontent.com/82439481/173238231-06d1c146-4381-4f58-9046-4f75d235c49d.mp4
+
 
 
 ### How to run :
