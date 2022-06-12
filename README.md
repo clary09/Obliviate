@@ -149,7 +149,7 @@ https://user-images.githubusercontent.com/82439481/173238231-06d1c146-4381-4f58-
 
 
 ### Duck Debuggers 🐤
-**AIN FATIMA          -  Added Home Map and Frequent Places, Locations, Family Gallery, Quizzler, Music**
+**AIN FATIMA          -  Added Home Map and Frequent Places, Locations, Family Gallery, Quizzler, Music, Voice Assistant**
 
 **RIYA SINGH          -  Added ChatBot, Splash Screen, App Icon, Todo-list**
 
